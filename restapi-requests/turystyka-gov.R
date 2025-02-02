@@ -4,7 +4,7 @@ pacman::p_load(
   dplyr
 )
 
-# Reuest - URL & params
+# Request URL & params
 url <- "https://api.turystyka.gov.pl/registers/open/cwoh"
 params <- list(
   city = "Kraków",

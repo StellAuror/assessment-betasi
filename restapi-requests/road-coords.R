@@ -23,7 +23,7 @@ road_points_df <- road_points %>%
     longitude = st_coordinates(geometry)[, 1],
     latitude = st_coordinates(geometry)[, 2]
   ) %>%
-  st_drop_geometry() %>%  # Usunięcie kolumny geometry
+  st_drop_geometry() %>%  
   select(osm_id, name, highway, longitude, latitude)
 
 readr:::write_csv(road_points_df, "./data/OSM-Road.csv")

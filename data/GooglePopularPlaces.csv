@@ -1,61 +1,61 @@
-name,rating,user_ratings_total,vicinity
-Skałki Twardowskiego w Krakowie,4.8,3866,Kraków
-Kościół Najświętszego Salwatora w Krakowie,4.7,172,"Świętej Bronisławy 9, Kraków"
-Salwator,4.6,957,Kraków
-Krowoderski Park,4.7,4621,"Jana Palacha 7, Kraków"
-Park Tysiąclecia w Krakowie,4.6,3089,Kraków
-Witkowice Park,4.7,759,Kraków
-Park. Żeromskiego,4.7,1023,Kraków
-Wanda Mound,4.2,1727,Kraków
-Wawel Royal Castle-State Art Collection,4.7,150877,"Wawel 5, Kraków"
-Rynek Główny,4.8,170108,"Rynek Główny, Kraków"
-St. Mary's Basilica,4.8,16710,"plac Mariacki 5, Kraków"
-Wawel Cathedral,4.8,31858,"Wawel, Kraków"
-Sanktuarium Bożego Miłosierdzia,4.8,7390,"Siostry Faustyny 3, Kraków"
-Museum of Contemporary Art in Krakow MOCAK,4.5,5900,"Lipowa 4, Kraków"
-Muzeum Uniwersytetu Jagiellońskiego Collegium Maius,4.7,915,"Jagiellońska 15, Kraków"
-Muzeum Lotnictwa Polskiego,4.7,15086,"Aleja Jana Pawła II 39, Kraków"
-Park Ratuszowy w Krakowie,4.5,950,"Aleja Przyjaźni 4, Kraków"
-Park A. and E. Jerzmanowski,4.7,2492,"Górników 29, Kraków"
-Galicia Jewish Museum,4.4,1686,"Dajwór 18, Kraków"
-National Museum in Kraków,4.5,11341,"Aleja 3 Maja 1, Kraków"
-St. Florian's Church,4.8,1630,"Warszawska 1b, Kraków"
-Muzeum Inżynierii i Techniki,4.3,4049,"Św. Wawrzyńca 15, Kraków"
-Church of St. Barbara In Krakow,4.7,896,"Mały Rynek 9, Kraków"
-"St. Andrew's Church, Kraków",4.7,591,"Grodzka 54, Kraków"
-Botanical Garden of the Jagiellonian University,4.7,12311,"Mikołaja Kopernika 27, Kraków"
-Old Synagogue,4.4,4383,"Szeroka 24, Kraków"
-Kraków Zoo,4.6,25379,"aleja Kasy Oszczędności Miasta Krakowa 14, Kraków"
-Jama Michalika | Est. 1895,4.1,2291,"Floriańska 45, Kraków"
-Our Lady Queen of Poland Church,4.5,1559,"Obrońców Krzyża 1, Kraków"
-Roman Catholic Parish of the Holy Cross,4.8,704,"Świętego Krzyża 23, Kraków"
-Church of St. John the Baptist,4.4,542,"Dobrego Pasterza 117, Kraków"
-The Archaeological Museum in Krakow,4.6,2443,"Senacka 3, Kraków"
-Kościół MB Ostrobramskiej w Krakowie,4.6,559,"Janusza Meissnera 20, Kraków"
-Laser park,4.6,1657,"Bosaków 5a/LU86, Kraków"
-Maciek and Dorota Park,4.7,1437,"Wichrowa 23, Kraków"
-Historical Museum of the City of Kraków,4.6,4355,"Rynek Główny 35, Kraków"
-New Kleparz,4.3,9255,"Długa, Kraków"
-Kraków Barbican,4.6,5522,"Basztowa, Kraków"
-Basilica of the Sacred Heart of Jesus,4.7,859,"Mikołaja Kopernika 26, Kraków"
-Bar Mleczny Żaczek,4.3,1312,"Czarnowiejska 75, Kraków"
-Legendy Krakowa,4.8,28,"Pawia 8, Kraków"
-The Spiski Palace,4.3,55,"Rynek Główny 34, Kraków"
-Bielańsko-Tyniecki Landscape Park,4.7,10473,Kraków
-Park Zdrojowy w Swoszowicach,4.4,380,"Piłkarska 9, Kraków"
-Hipolit House,4.6,269,"plac Mariacki 3, Kraków"
-Bunkier - Gallery of Contemporary Art,4.4,631,"plac Szczepański 3a, Kraków"
-Kościuszko Mound,4.6,22063,"al. Waszyngtona 1, Kraków"
-Museum of Polish Army AK,4.6,2250,"Wita Stwosza 12, Kraków"
-Church of St. Anne,4.8,2080,"Świętej Anny 11, Kraków"
-Basilica of St. Michael the Archangel,4.7,2918,"Skałeczna 15, Kraków"
-Smok Wawelski,4.6,23406,"Stare Miasto, Kraków"
-Las Wolski,4.8,523,Kraków
-Podwawelski Tramwaj Wodny,4.4,186,"Flisacka 30, Kraków"
-National Museum - Czartoryski Library,4.5,57,"Świętego Marka 17, Kraków"
-Celestat,4.5,467,"Lubicz 16, Kraków"
-House Dlugosz (UPJPII),4.4,62,"Kanonicza 25, Kraków"
-The Jan Matejko House | National Museum,4.6,1092,"Floriańska 41, Kraków"
-AQUA FUN - REJSY STATKIEM,4.6,489,"bulwar Czerwieński 172/7, Kraków"
-Holy Trinity Church,4.8,3013,"Stolarska 12, Kraków"
-Interprof Tłumaczenia Francuskie i Usługi Turystyczne - Ewa Wrzesińska,5,4,"Stefana Batorego 11/11, Kraków"
+name,rating,user_ratings_total,vicinity,latitude,longitude
+Skałki Twardowskiego w Krakowie,4.8,3866,Kraków,50.04098859999999,19.903969
+Kościół Najświętszego Salwatora w Krakowie,4.7,173,"Świętej Bronisławy 9, Kraków",50.0534171,19.9123028
+Salwator,4.6,957,Kraków,50.0533654,19.9114444
+Krowoderski Park,4.7,4621,"Jana Palacha 7, Kraków",50.0887558,19.92199
+Park Tysiąclecia w Krakowie,4.6,3089,Kraków,50.0908409,19.9965723
+Witkowice Park,4.7,760,Kraków,50.1093841,19.9548924
+Park. Żeromskiego,4.7,1023,Kraków,50.0662978,20.0431559
+Wanda Mound,4.2,1728,Kraków,50.0702204,20.0680738
+Wawel Royal Castle-State Art Collection,4.7,150891,"Wawel 5, Kraków",50.0541115,19.935423
+Rynek Główny,4.8,170127,"Rynek Główny, Kraków",50.0618971,19.936756
+St. Mary's Basilica,4.8,16715,"plac Mariacki 5, Kraków",50.0616411,19.9393903
+Wawel Cathedral,4.8,31858,"Wawel, Kraków",50.0546371,19.9354684
+Sanktuarium Bożego Miłosierdzia,4.8,7393,"Siostry Faustyny 3, Kraków",50.01997599999999,19.9376677
+Museum of Contemporary Art in Krakow MOCAK,4.5,5900,"Lipowa 4, Kraków",50.04762419999999,19.9615334
+Muzeum Uniwersytetu Jagiellońskiego Collegium Maius,4.7,916,"Jagiellońska 15, Kraków",50.06156389999999,19.9339308
+Muzeum Lotnictwa Polskiego,4.7,15090,"Aleja Jana Pawła II 39, Kraków",50.0769631,19.9897622
+Park Ratuszowy w Krakowie,4.5,950,"Aleja Przyjaźni 4, Kraków",50.07566689999999,20.0395427
+Park A. and E. Jerzmanowski,4.7,2492,"Górników 29, Kraków",50.01798849999999,19.9950861
+Galicia Jewish Museum,4.4,1687,"Dajwór 18, Kraków",50.05084040000001,19.9497073
+National Museum in Kraków,4.5,11346,"Aleja 3 Maja 1, Kraków",50.0600662,19.9238774
+St. Florian's Church,4.8,1631,"Warszawska 1b, Kraków",50.06755889999999,19.9430019
+Muzeum Inżynierii i Techniki,4.3,4053,"Św. Wawrzyńca 15, Kraków",50.049764,19.946822
+Church of St. Barbara In Krakow,4.7,896,"Mały Rynek 9, Kraków",50.0613181,19.9398657
+"St. Andrew's Church, Kraków",4.7,591,"Grodzka 54, Kraków",50.05658210000001,19.9383954
+Botanical Garden of the Jagiellonian University,4.7,12311,"Mikołaja Kopernika 27, Kraków",50.0635669,19.9555311
+Old Synagogue,4.4,4384,"Szeroka 24, Kraków",50.0514597,19.9485937
+Kraków Zoo,4.6,25382,"aleja Kasy Oszczędności Miasta Krakowa 14, Kraków",50.0551528,19.8540181
+Jama Michalika | Est. 1895,4.1,2292,"Floriańska 45, Kraków",50.0640872,19.9408794
+Our Lady Queen of Poland Church,4.5,1560,"Obrońców Krzyża 1, Kraków",50.0849184,20.0293451
+Roman Catholic Parish of the Holy Cross,4.8,704,"Świętego Krzyża 23, Kraków",50.0634005,19.9431772
+Church of St. John the Baptist,4.4,542,"Dobrego Pasterza 117, Kraków",50.0894865,19.9701716
+The Archaeological Museum in Krakow,4.6,2443,"Senacka 3, Kraków",50.05765520000001,19.9366806
+Kościół MB Ostrobramskiej w Krakowie,4.6,559,"Janusza Meissnera 20, Kraków",50.07475480000001,19.978912
+Laser park,4.6,1658,"Bosaków 5a/LU86, Kraków",50.0841931,19.9624755
+Maciek and Dorota Park,4.7,1437,"Wichrowa 23, Kraków",50.00220119999999,19.9120489
+Historical Museum of the City of Kraków,4.6,4355,"Rynek Główny 35, Kraków",50.0626812,19.9365176
+New Kleparz,4.3,9257,"Długa, Kraków",50.07288,19.9354466
+Kraków Barbican,4.6,5524,"Basztowa, Kraków",50.0654718,19.9416613
+Basilica of the Sacred Heart of Jesus,4.7,859,"Mikołaja Kopernika 26, Kraków",50.0620498,19.9486721
+Bar Mleczny Żaczek,4.3,1312,"Czarnowiejska 75, Kraków",50.067811,19.9175579
+Legendy Krakowa,4.8,28,"Pawia 8, Kraków",50.0654472,19.944871
+The Spiski Palace,4.3,55,"Rynek Główny 34, Kraków",50.0624393,19.93631899999999
+Bielańsko-Tyniecki Landscape Park,4.7,10473,Kraków,50.05587569999999,19.8500193
+Park Zdrojowy w Swoszowicach,4.4,381,"Piłkarska 9, Kraków",49.9928171,19.9334745
+Hipolit House,4.6,269,"plac Mariacki 3, Kraków",50.06185719999999,19.94012739999999
+Bunkier - Gallery of Contemporary Art,4.4,632,"plac Szczepański 3a, Kraków",50.0635302,19.934219
+Kościuszko Mound,4.6,22068,"al. Waszyngtona 1, Kraków",50.05484149999999,19.8927559
+Museum of Polish Army AK,4.6,2251,"Wita Stwosza 12, Kraków",50.0722348,19.9484801
+Church of St. Anne,4.8,2080,"Świętej Anny 11, Kraków",50.06227849999999,19.9333939
+Basilica of St. Michael the Archangel,4.7,2922,"Skałeczna 15, Kraków",50.04826099999999,19.9377602
+Smok Wawelski,4.6,23415,"Stare Miasto, Kraków",50.0530183,19.9335845
+Las Wolski,4.8,523,Kraków,50.0555185,19.8511182
+Podwawelski Tramwaj Wodny,4.4,186,"Flisacka 30, Kraków",50.0520331,19.9186545
+National Museum - Czartoryski Library,4.5,57,"Świętego Marka 17, Kraków",50.063797,19.9396279
+Celestat,4.5,467,"Lubicz 16, Kraków",50.0653331,19.9493198
+House Dlugosz (UPJPII),4.4,62,"Kanonicza 25, Kraków",50.05556919999999,19.9366365
+The Jan Matejko House | National Museum,4.6,1093,"Floriańska 41, Kraków",50.06389490000001,19.9408229
+AQUA FUN - REJSY STATKIEM,4.6,489,"bulwar Czerwieński 172/7, Kraków",50.0515268,19.9341306
+Holy Trinity Church,4.8,3014,"Stolarska 12, Kraków",50.0593635,19.9391273
+Interprof Tłumaczenia Francuskie i Usługi Turystyczne - Ewa Wrzesińska,5,4,"Stefana Batorego 11/11, Kraków",50.0673124,19.9310591

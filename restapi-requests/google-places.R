@@ -1,73 +1,77 @@
-pacman::p_load(
-  httr,
-  jsonlite,
-  dplyr,
-  purrr
-)
+pacman::p_load(httr, jsonlite, dplyr, purrr, stringdist)
 
-######## FIND CORRESPONDING DATA
 # Load basic hotel data
-dfBasic <- 
-  readr::read_csv("data/BasicHotelData.csv")
+dfBasic <- readr::read_csv("data/BasicHotelData.csv")
 
-# Extract place IDs based on coordinates
-place_ids <- 
-  lapply(1:nrow(dfBasic), function(i) {
-    lat <- dfBasic$lat[i]
-    lon <- dfBasic$lon[i]
+### Function to fetch Google Places data based on name and address
+fetch_google_place_id <- function(hotel_name, street, postal_code) {
+  # Google Places API request
+  places_url <- "https://maps.googleapis.com/maps/api/place/findplacefromtext/json"
+  query <- paste(hotel_name, street, postal_code)
+  
+  params <- list(
+    input = query,
+    inputtype = "textquery",
+    fields = "place_id,name,formatted_address",
+    key = config::get("google_api_key")
+  )
+  
+  response <- GET(places_url, query = params, add_headers(accept = "application/json"))
+  
+  if (status_code(response) == 200) {
+    data <- fromJSON(content(response, as = "text", encoding = "UTF-8"))
     
-    # Reverse geocoding API request
-    geocode_url <- "https://maps.googleapis.com/maps/api/geocode/json"
-    params <- list(
-      latlng = paste(lat, lon, sep = ","),
-      key = config::get("google_api_key")
-    )
-    
-    response <- GET(geocode_url, query = params, add_headers(accept = "application/json"))
-    
-    if (status_code(response) == 200) {
-      data <- fromJSON(content(response, as = "text", encoding = "UTF-8"))
-      
-      # Identify exact matching place
-      place_id <- data$results |> as.data.frame(stringsAsFactors = FALSE) |>
-        select(place_id, formatted_address) |> 
+    if (length(data$candidates) > 0) {
+      matches <- data$candidates |> 
+        as.data.frame(stringsAsFactors = FALSE) |>
         mutate(
-          street = grepl(
-            gsub("\\s+", " ", trimws(dfBasic[i, 9])), 
+          name_similarity = stringdist::stringdist(
+            tolower(hotel_name), 
+            tolower(name), 
+            method = "jw"
+          ),
+          street_match = grepl(
+            gsub("\\s+", " ", trimws(street)), 
             gsub("\\s+", " ", trimws(formatted_address)), 
             ignore.case = TRUE
           ),
-          code = grepl(
-            gsub("\\s+", " ", trimws(dfBasic[i, 8])), 
+          postal_code_match = grepl(
+            gsub("\\s+", " ", trimws(postal_code)), 
             gsub("\\s+", " ", trimws(formatted_address)), 
             ignore.case = TRUE
-          )
-        ) |>
-        filter(code, street) |> pull(1) |> head(1)
+          ),
+          score = (1 - name_similarity) * 0.6 + 
+            street_match * 0.2 + 
+            postal_code_match * 0.2
+        ) |> 
+        arrange(desc(score)) |> 
+        head(1)  # Pick the best match
       
-      c(dfBasic[[i, 2]], place_id)
-      
-    } else {
-      c(dfBasic[[i, 2]], "error")
+      return(matches$place_id[1])
     }
-  })
+  }
+  return(NA)
+}
 
-# Map ID pairs for Google & government data
-place_ids |> 
-  purrr::map_dfr(~{
-    tibble::tibble(
-      id_gov = .x[1],
-      id_google = ifelse(length(.x) > 1, .x[2], NA)  
+### Apply the matching function to all hotels
+dfGooglePlace <- dfBasic |> 
+  rowwise() |> 
+  mutate(
+    id_google = fetch_google_place_id(
+      hotel_name = content.name,
+      street = content.street,
+      postal_code = content.postalCode
     )
-  }) -> dfGooglePlace
+  ) |> 
+  select(id_gov = content.rid, id_google)
 
+
+print(dfGooglePlace, n = 1000)
 
 ############ GOOGLE REVIEW AND RATINGS
-
-# API base URL
+### Fetch Google reviews and ratings
 base_url <- "https://maps.googleapis.com/maps/api/place/details/json"
 
-# Fetch Google reviews and ratings
 results <- lapply(dfGooglePlace$id_google, function(place_id) {
   params <- list(
     place_id = place_id,
@@ -76,10 +80,10 @@ results <- lapply(dfGooglePlace$id_google, function(place_id) {
   )
   
   response <- GET(base_url, query = params, add_headers(accept = "application/json"))
+  Sys.sleep(2)  # Small delay to allow token to activate
   
   if (status_code(response) == 200) {
     data <- fromJSON(content(response, as = "text", encoding = "UTF-8"))
-    
     # Extract key information with place ID
     place_info <- tryCatch({
       data$result %>%
@@ -129,16 +133,17 @@ left_join(
 ) |> readr::write_csv("./data/GoogleHotelData.csv")
 
 
+nrow(readr::read_csv("./data/GoogleHotelData.csv"))
+
 
 ####### FIND MOST POPULAR PLACES
-
+### Function to fetch paginated results
 # API base URL and parameters
 base_url <- "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
 latitude <- 50.0619
 longitude <- 19.9368
 radius <- 10000  # Radius in meters
 
-# Function to fetch paginated results
 get_places <- function(location, radius, type, api_key) {
   all_results <- list()
   next_page_token <- NULL
@@ -179,12 +184,14 @@ get_places <- function(location, radius, type, api_key) {
       rating = x$rating,
       user_ratings_total = x$user_ratings_total,
       vicinity = x$vicinity,
+      latitude = x$geometry.location.lat,
+      longitude = x$geometry.location.lng,
       stringsAsFactors = FALSE
     )
   }))
 }
 
-# Call the function
+### Call the function
 results <- get_places(
   location = paste(latitude, longitude, sep = ","),
   radius = radius,
